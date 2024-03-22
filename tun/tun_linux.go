@@ -635,6 +635,7 @@ func CreateTUNFromFile(file *os.File, mtu int) (Device, error) {
 // CreateUnmonitoredTUNFromFD creates a Device from the provided file
 // descriptor.
 func CreateUnmonitoredTUNFromFD(fd int) (Device, string, error) {
+	fmt.Println("CreateUnmonitoredTUNFromFD")
 	err := unix.SetNonblock(fd, true)
 	if err != nil {
 		return nil, "", err
